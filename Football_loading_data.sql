@@ -19,7 +19,7 @@ skip_header = 1;
 CREATE STAGE my_csv_stage
 file_format = my_csv_format
   url = 's3://snowflakefootballdata/Football Dataset/'
-  CREDENTIALS=(aws_secret_key='Zl8ku1HCuG6xb0tnC9D7RXlYUtIwS//0OWSmImjI' aws_key_id='AKIAYJ2R46DDFFHRKTCG');
+  CREDENTIALS=(aws_secret_key=<IAM access key> aws_key_id=<IAM key ID>);
 
 --STEP 6
 --CREATING THE BASE TABLE ON SNOWFLAKE
