@@ -1,28 +1,28 @@
-//STEP 1
-//CREATING A WAREHOUSE
+--STEP 1
+--CREATING A WAREHOUSE
 create warehouse usecase;
 
-//STEP 3
-//CREATING A DATABASE
+--STEP 3
+--CREATING A DATABASE
 create database football_data;
 
 
-//STEP 4
-//CREATING A FILE FORMAT
+--STEP 4
+--CREATING A FILE FORMAT
 create file format my_csv_format  
 type = 'CSV'  
 field_delimiter = ','  
 skip_header = 1;
 
-//STEP 5
-//CREATING A STAGE
+--STEP 5
+--CREATING A STAGE
 CREATE STAGE my_csv_stage
 file_format = my_csv_format
   url = 's3://snowflakefootballdata/Football Dataset/'
   CREDENTIALS=(aws_secret_key='Zl8ku1HCuG6xb0tnC9D7RXlYUtIwS//0OWSmImjI' aws_key_id='AKIAYJ2R46DDFFHRKTCG');
 
-//STEP 6
-//CREATING THE BASE TABLE ON SNOWFLAKE
+--STEP 6
+--CREATING THE BASE TABLE ON SNOWFLAKE
 
 --TABLE 1: LEAGUES
 create table Leagues
@@ -116,8 +116,8 @@ ADD CONSTRAINT PK_Shots PRIMARY KEY (gameId,shooterId);
 
 
 
-//STEP 7
-//COPYING THE DATA FROM S3 INTO TARGET TABLE
+--STEP 7
+--COPYING THE DATA FROM S3 INTO TARGET TABLE
 
 --copy data (Leagues Table)
 copy into leagues
